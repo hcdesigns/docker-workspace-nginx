@@ -2,8 +2,9 @@ FROM nginx:alpine
 
 LABEL maintainer="Harvey Chow <harvey@hcdesigns.nl>"
 
-ADD includes /etc/nginx/includes
-ADD nginx.conf /etc/nginx/
+COPY includes /etc/nginx/includes
+COPY nginx.conf /etc/nginx/
+COPY sites /etc/nginx/conf.d
 
 RUN apk update \
     && apk upgrade \
