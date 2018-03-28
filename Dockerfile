@@ -6,6 +6,8 @@ COPY includes /etc/nginx/includes
 COPY nginx.conf /etc/nginx/
 COPY sites /etc/nginx/conf.d
 
+COPY html /var/www/html
+
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache bash \
